@@ -34,33 +34,35 @@ namespace JuegoRPG
         private string v2;
         private int v;
 
-        public Personaje(string v1, string v2)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
-        }
-
-        public Personaje(string v1, string v2, int v) : this(v1, v2)
-        {
-            this.v = v;
-        }
-
         //metodos setters y getters
         public int Velocidad { get => velocidad; set => velocidad = value; }
         public int Destreza { get => destreza; set => destreza = value; }
         public int Fuerza { get => fuerza; set => fuerza = value; }
-        public int Nivel1 { get => Nivel; set => Nivel = value; }
-        public int Armadura1 { get => Armadura; set => Armadura = value; }
+        //public int Nivel { get => nivel; set => nivel = value; }
+        public int armadura { get => Armadura; set => Armadura = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Nicks { get => nicks; set => nicks = value; }
         public string FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public int Edad { get => edad; set => edad = value; }
         public int Salud { get => salud; set => salud = value; }
+        public int Nivel1 { get => Nivel; set => Nivel = value; }
 
-        public Personaje()
+        //constructor
+        public Personaje(string v1, string v2)
         {
-
+            this.v1 = v1;
+            this.v2 = v2;
+            nombre = v1;
+            nicks = v2;
+            //Console.WriteLine(nombre);
+            //Console.WriteLine(nicks);
+            velocidad = new Random().Next(1, 11);
+            destreza = new Random().Next(1, 6);
+            fuerza = new Random().Next(1, 11);
+            Nivel1 = new Random().Next(1, 11);
+            armadura = new Random().Next(1, 11);
         }
+
     }
 }
