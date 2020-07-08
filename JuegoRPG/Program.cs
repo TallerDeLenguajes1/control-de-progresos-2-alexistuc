@@ -10,36 +10,27 @@ namespace JuegoRPG
 
         static void Main(string[] args)
         {
-            string[] nombres = { "ale", "alvaro", "yeye", "enzo", "maxi"};
-            string[] nicks = { "papichulo", "dengue", "vieja", "moxi" };
+            string[] nombres = { "kitana", "mileena", "jade", "sonya", "sheeva"};
+            string[] nicks = { "edeniana", "tarkatana", "shokan", "terrestre" };
 
             int cantidadPersonajes = 2;
             Personaje players;
-            List<Personaje> players = new List<Personaje>();
+            List<Personaje> player = new List<Personaje>();
             for(int i=0; i < cantidadPersonajes; ++i)
             {
-
-                players = new Personaje(nombres[new Random().Next(0,4)], nicks[new Random().Next(0,4)],);
+                players = new Personaje(nombres[new Random().Next(0,4)], nicks[new Random().Next(0,4)], i+1);
+                player.Add(players);
             }
-             
-        }
-        /*
-         static int cantidad = 2;
-        static void Main(string[] args)
-        {
-            Personaje jugador;
-            List<Personaje> ListaDeJugadores = new List<Personaje>();
-            string[] Nombres = { "Celeste", "Gonzalo", "Fabio", "Alex", "Fede" };
-            string[] Apodos = { "Ntvg", "Sotaski", "Soto", "Juampy", "kiko" };
-        string[] nombres = {"Jhon Salchichon", "Josefo", "Lady Sonsa"};
-            string[] apodos = {"Degolador", "El Destructor", "El Elegido"};
-            for(int i = 0; i < cantidad; i++)
+            //combate
+            Console.WriteLine("COMBATE:");
+            foreach(Personaje p in player)
             {
-                jugador = new Personaje(Nombres[new Random().Next(0, 4)], Apodos[new Random().Next(0, 4)], i+1);
-                ListaDeJugadores.Add(jugador);
-                jugador.MostrarPersonajes();
+                Console.WriteLine("NOMBRE: " + p.Nombre);
+                Console.WriteLine("APODO: " + p.Nicks);
+                Console.WriteLine("\n");
             }
-            Combate(ListaDeJugadores);
-         */
+            
+        }
+        
     }
 }

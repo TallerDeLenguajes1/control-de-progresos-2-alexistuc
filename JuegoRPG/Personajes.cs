@@ -26,10 +26,24 @@ namespace JuegoRPG
         Salud://100*/
         private string tipo;
         private string nombre;
-        private string apodo;
+        private string nicks;
         private string fechaNacimiento;
         private int edad;
         private int salud;
+        private string v1;
+        private string v2;
+        private int v;
+
+        public Personaje(string v1, string v2)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+        }
+
+        public Personaje(string v1, string v2, int v) : this(v1, v2)
+        {
+            this.v = v;
+        }
 
         //metodos setters y getters
         public int Velocidad { get => velocidad; set => velocidad = value; }
@@ -39,9 +53,14 @@ namespace JuegoRPG
         public int Armadura1 { get => Armadura; set => Armadura = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Apodo { get => apodo; set => apodo = value; }
+        public string Nicks { get => nicks; set => nicks = value; }
         public string FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public int Edad { get => edad; set => edad = value; }
         public int Salud { get => salud; set => salud = value; }
+
+        public Personaje()
+        {
+
+        }
     }
 }
